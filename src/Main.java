@@ -1,20 +1,19 @@
+import java.util.Arrays;
+
 public class Main {
-
     public static void main(String[] args){
-
-        int[] arr = {2, 4, 9, 6, 3, 7, 5, 8, 1};
-            for(int i = 0; i < arr.length; i++){
-                for(int j = 0; j < arr.length - 1; j++){
-                    if(arr[j] > arr[j + 1]){
-                        int temp = 0;
-                        temp = arr[j];
-                        arr[j] = arr[j + 1];
-                        arr[j + 1] = temp;
-                    }
-                }
-            }
-
-        // System.out.println(bubbleSort(arr));
-        System.out.println(java.util.Arrays.toString(arr));
+        int[] arr = {9, 1, 8, 2, 7, 3, 6, 4, 5};
+        for(int i = 0; i < arr.length - 1; i++){
+            int min = i;
+            for(int j = i + 1; j < arr.length; j++){
+                if(arr[min] > arr[j]){
+                    min = j;
+                };
+            };
+            int tmp = arr[i];
+            arr[i] = arr[min];
+            arr[min] = tmp;
+        };
+        System.out.println(Arrays.toString(arr));
     }
 }
