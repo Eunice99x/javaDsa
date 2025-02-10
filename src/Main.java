@@ -2,18 +2,18 @@ import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args){
-        int[] arr = {9, 1, 8, 2, 7, 3, 6, 4, 5};
-        for(int i = 0; i < arr.length - 1; i++){
-            int min = i;
-            for(int j = i + 1; j < arr.length; j++){
-                if(arr[min] > arr[j]){
-                    min = j;
-                };
-            };
-            int tmp = arr[i];
-            arr[i] = arr[min];
-            arr[min] = tmp;
-        };
-        System.out.println(Arrays.toString(arr));
+      int[] arr = {5, 3, 8, 4, 2, 7};
+      for(int i = 1; i < arr.length; i++){
+        int tmp = arr[i];
+        int j = i - 1;
+
+        while(j >= 0 && arr[j] > tmp){
+          arr[j+1] = arr[j];
+          j--;
+        }
+        arr[j+1] = tmp;
+      }; 
+
+      System.out.println(Arrays.toString(arr));
     }
 }
